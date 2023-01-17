@@ -1,0 +1,58 @@
+﻿@model IntProgram.Models.ogrencilertablo
+
+@{
+    ViewData["Title"] = "ogrencilerguncelle";
+}
+
+<h1>ogrencilerguncelle</h1>
+
+<h4>ogrencilertablo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="gncll">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ogrenciid" class="control-label"></label>
+                <input asp-for="ogrenciid" class="form-control" />
+                <span asp-validation-for="ogrenciid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrenciadsoyad" class="control-label"></label>
+                <input asp-for="ogrenciadsoyad" class="form-control" />
+                <span asp-validation-for="ogrenciadsoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrencikayittarih" class="control-label"></label>
+                <input asp-for="ogrencikayittarih" class="form-control" />
+                <span asp-validation-for="ogrencikayittarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrencino" class="control-label"></label>
+                <input asp-for="ogrencino" class="form-control" />
+                <span asp-validation-for="ogrencino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrencidogumtarih" class="control-label"></label>
+                <input asp-for="ogrencidogumtarih" class="form-control" />
+                <span asp-validation-for="ogrencidogumtarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ogrencibolum" class="control-label"></label>
+                <input asp-for="ogrencibolum" class="form-control" />
+                <span asp-validation-for="ogrencibolum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

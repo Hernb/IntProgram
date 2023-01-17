@@ -1,0 +1,53 @@
+﻿@model IEnumerable<IntProgram.Models.okulyonetimtablo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.yonetimid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.yonetimadsoyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.yonetimgorevi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.yonetimtipi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.yonetimid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.yonetimadsoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.yonetimgorevi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.yonetimtipi)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+﻿@model IntProgram.Models.okulyonetimtablo
+
+@{
+    ViewData["Title"] = "yonetimguncelle";
+}
+
+<h1>yonetimguncelle</h1>
+
+<h4>okulyonetimtablo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="guncelle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="yonetimid" class="control-label"></label>
+                <input asp-for="yonetimid" class="form-control" />
+                <span asp-validation-for="yonetimid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="yonetimadsoyad" class="control-label"></label>
+                <input asp-for="yonetimadsoyad" class="form-control" />
+                <span asp-validation-for="yonetimadsoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="yonetimgorevi" class="control-label"></label>
+                <input asp-for="yonetimgorevi" class="form-control" />
+                <span asp-validation-for="yonetimgorevi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="yonetimtipi" class="control-label"></label>
+                <input asp-for="yonetimtipi" class="form-control" />
+                <span asp-validation-for="yonetimtipi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

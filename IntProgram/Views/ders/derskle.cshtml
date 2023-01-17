@@ -1,0 +1,48 @@
+﻿@model IntProgram.Models.derstablo
+
+@{
+    ViewData["Title"] = "derskle";
+}
+
+<h1>derskle</h1>
+
+<h4>derstablo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ekle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="dersid" class="control-label"></label>
+                <input asp-for="dersid" class="form-control" />
+                <span asp-validation-for="dersid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dersadi" class="control-label"></label>
+                <input asp-for="dersadi" class="form-control" />
+                <span asp-validation-for="dersadi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="derskredisi" class="control-label"></label>
+                <input asp-for="derskredisi" class="form-control" />
+                <span asp-validation-for="derskredisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dersokulyonetimid" class="control-label"></label>
+                <input asp-for="dersokulyonetimid" class="form-control" />
+                <span asp-validation-for="dersokulyonetimid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
